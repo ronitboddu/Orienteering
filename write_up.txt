@@ -1,0 +1,25 @@
+Cost Function:
+1. Since we have speed variantion on different types of terrain, time is the unit to be taken into consideration. 
+2. Cost function will caculate the time it will take to reach end point(neighbor points) from the node of consideration. Hence cost function will select the path which takes minimum duration to reach the end point.
+3. To calculate time, we will be using formula 
+	time = distance/speed
+
+	where distance is calculated from start to end using euclidean distance formula taking elevations into consideration.
+	Speed will be hard coded for each terrain type.
+
+
+Heuristic Function:
+1. This will be the rough estimation of time it will take to travel from the node of consideration to the end node.
+2. To calculate time, we will be using formula 
+	time = distance/speed
+
+	where distance is calculated from start to end using euclidean distance formula and NOT taking elevations into consideration.
+	Speed will be hard coded for each terrain type.
+3. Calculating time and not just distance allows us to choose path which can be traversed quickly based on terrain differences.
+
+
+Justification for correctness:
+1. Cost Function will give the approximate time to reach from source to destination since we are considering all the necessary factors required. 
+2. Subsequently, A* algorithm will select the optimal route for any destination node based on the time duration it takes to reach the destination.
+3. Heuristic Function will give rough estimated time to travel from source to destination since we are not considering the intermediate elevation differences.
+4. Heuristic Function will consider neighboring point's terrain type over all the remaining distance from that neighboring point to destination point.
